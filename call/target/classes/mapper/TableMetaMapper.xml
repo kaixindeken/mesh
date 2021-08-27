@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.tanklab.mathless.mapper.TableMetaMapper">
-  <resultMap id="BaseResultMap" type="com.tanklab.mathless.pojo.TableMeta">
-
-    <id column="table_name" jdbcType="VARCHAR" property="tableName" />
-    <result column="last_update" jdbcType="DATE" property="lastUpdate" />
-  </resultMap>
-</mapper>
