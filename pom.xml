@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.tanklab</groupId>
+    <artifactId>mathless</artifactId>
+    <version>1.0.0</version>
+    <modules>
+        <module>common</module>
+        <module>model</module>
+        <module>api</module>
+        <module>user</module>
+        <module>call</module>
+        <module>contribute</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.5.3</version>
+    </parent>
+
+    <properties>
+        <skipTests>true</skipTests>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <springfox-swagger2.version>3.0.0</springfox-swagger2.version>
+        <swagger-bootstrap-ui.version>1.9.6</swagger-bootstrap-ui.version>
+        <mysql-connector-java.version>8.0.16</mysql-connector-java.version>
+        <mybatis-spring-boot-starter.version>2.1.3</mybatis-spring-boot-starter.version>
+        <mapper.version>4.1.5</mapper.version>
+        <mapper-spring-boot-starter.version>2.1.5</mapper-spring-boot-starter.version>
+        <jackson.version>2.10.2</jackson.version>
+        <mybatis-generator-core.version>1.3.7</mybatis-generator-core.version>
+        <okhttp.version>4.9.0</okhttp.version>
+        <commons-codec.version>1.14</commons-codec.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <commons-fileupload.version>1.4</commons-fileupload.version>
+        <fastjson.version>1.2.75</fastjson.version>
+        <javax.validation.version>2.0.1.Final</javax.validation.version>
+        <hibernate.validator.version>6.2.0.Final</hibernate.validator.version>
+        <spotless.version>2.7.0</spotless.version>
+        <zt-zip.version>1.14</zt-zip.version>
+        <kubernetes-java-client.version>12.0.0</kubernetes-java-client.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <gitlab-java.version>4.1.1</gitlab-java.version>
+        <lombok.version>1.18.18</lombok.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2020.0.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+            <!-- apache 工具类 -->
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.version}</version>
+            </dependency>
+
+            <!--实现gitlab-java操作-->
+            <dependency>
+                <groupId>org.gitlab</groupId>
+                <artifactId>java-gitlab-api</artifactId>
+                <version>${gitlab-java.version}</version>
+            </dependency>
+
+            <!-- zt-zip -->
+            <dependency>
+                <groupId>org.zeroturnaround</groupId>
+                <artifactId>zt-zip</artifactId>
+                <version>${zt-zip.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

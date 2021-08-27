@@ -1,0 +1,48 @@
+############################################################
+#
+# 用户服务
+#
+############################################################
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1  # tomcat默认大小2M，超过2M的文件不会被捕获，需要调整此处大小为100MB或者-1即可
+  port: 8081
+
+############################################################
+#
+# mybatis 配置
+#
+############################################################
+mybatis:
+  type-aliases-package: com.tanklab.mathless.pojo          # 所有POJO类所在包路径
+  mapper-locations: classpath:mapper/*.xml      # mapper映射文件
+
+############################################################
+#
+# mybatis mapper 配置
+#
+############################################################
+# 通用 Mapper 配置
+mapper:
+  mappers: com.tanklab.mathless.config.my.mapper.MyMapper
+  not-empty: false    # 在进行数据库操作的的时候，判断表达式 username != null, 是否追加 username != ''
+  identity: MYSQL
+
+############################################################
+#
+# 监控配置
+#
+############################################################
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
+
+
