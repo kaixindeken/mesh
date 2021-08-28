@@ -1,4 +1,4 @@
-### Mathless（测试中）
+### Mathless
 
 在 [原项目](https://github.com/mathless-tju/backend) 的基础上将各模块独立出来方便开发并配合 istio 使用
 
